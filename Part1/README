@@ -1,0 +1,38 @@
+1st Partner: Logan McDonald
+2nd Partner: Veronica Salm
+CMPUT 274 LBL EA2
+Fall 2016
+
+Code Filename: restaurant_finder.cpp
+
+Collaborated Code: This file was collaboratively developed by both partners, as listed above.
+
+Much of the code from this assignment was adapted or copied from code developed in class, including the restaurant sorting functions and other code as detailed in the assignment instructions.
+
+Accessories:
+1 * Arduino Mega Board (AMG)
+1 * A-B Style USB Cable
+1 * Adafruit 1.8" 18-bit color TFT LCD display with microSD card - ST7735R
+1 * Kingston flash memory card - 4 GB - microSDHC
+1 * Sparkfun Thumb Joystick
+
+Wiring instructions: Uses the standard wiring for both the LCD display and joystick as was used in class. The full wiring instructions can be found here: http://ugweb.cs.ualberta.ca/~c274/web/ConcreteComputing/section/adafruit_lcd.htm 
+
+Running the code:
+Open a bash terminal. After moving to the correct directory, load the file, compile and upload it using the command "make upload". The serial monitor can be opened using "serial-mon" (though it is not used explicitly in this assignment, it may be used to check that the SD card has initialized correctly).
+
+Problem Areas, Assumptions and General Notes: 
+
+In order to run this code, you must have a properly configured SD card that contains the file "yeg-big.lcd" in order to display the map of Edmonton. It must also contain some raw-written restaurant as loaded in class. The file lcd_image.h is also necessary to run the code and is included in the uploaded zipped file.
+
+In the setup() function, the joystick's natural resting position is tested, both horizontally and vertically. It is assumed that the user is not touching the joystick when the program starts.
+
+When the program starts, an introductory message appears on the LCD screen with basic instructions for the user. The user must press and release the joystick button in order to progress to mode 0 (the instructions for this are displayed on the screen).
+
+When mode 0 is entered for the first time, the cursor (a 3x3 pixel square) starts in the approximate center of screen and map. 
+
+The cursor moves much more quickly near the top and left edges of the map than at the bottom and right edges, since the cursor speed was set to be ideal in the center of the map.
+
+Loading the restaurant data and sorting takes some time, so "Calculating..." was displayed while this is executed. 
+
+The location of the restaurants on the map is not an exact representation. Also, some of the listed restaurants are no longer in business.
